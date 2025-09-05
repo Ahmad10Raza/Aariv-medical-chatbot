@@ -1,5 +1,4 @@
-
-# 💬 AI Chatbot with Authentication
+# 🤖 Aariv a  AI Medical Chatbot
 
 This project is a **React-based AI Chatbot** application with a modern UI and authentication system.
 It provides users with a secure login flow and an interactive chatbot interface styled with Tailwind CSS.
@@ -19,11 +18,9 @@ It provides users with a secure login flow and an interactive chatbot interface 
 
 ## 📂 Project Structure
 
-/backend 
+/backend
 
-/frontend 
-
-
+/frontend
 
 ## 📦 Installation
 
@@ -52,7 +49,7 @@ It provides users with a secure login flow and an interactive chatbot interface 
 
 ## Output UI
 
-![output](frontend/src/assets/home.png)
+![output]()
 
 ## 🔮 Roadmap
 
