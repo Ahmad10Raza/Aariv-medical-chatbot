@@ -9,6 +9,7 @@ from langchain_openai import ChatOpenAI
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
+from flask_cors import CORS
 
 # -------------------- Logging Setup --------------------
 logging.basicConfig(
@@ -23,6 +24,7 @@ logger = logging.getLogger(__name__)
 
 # -------------------- Flask App --------------------
 app = Flask(__name__)
+CORS(app)  # allow React frontend to call backend
 app.secret_key = os.environ.get("SECRET_KEY", "super-secret-key")  # needed for session
 
 # Load API Keys
@@ -71,7 +73,30 @@ def update_history(role, content):
 # -------------------- Routes --------------------
 @app.route("/")
 def index():
-    return render_template("chat.html")
+    return "Aariv"
+
+
+# Dummy user (replace with DB or JWT later)
+VALID_USER = {
+    "username": "admin",
+    "password": "password123"
+}
+
+@app.route("/api/login", methods=["POST"])
+def login():
+    data = request.get_json()
+
+    if not data or "username" not in data or "password" not in data:
+        return jsonify({"message": "Missing username or password"}), 400
+
+    username = data["username"]
+    password = data["password"]
+
+    if username == VALID_USER["username"] and password == VALID_USER["password"]:
+        return jsonify({"message": "Login successful"}), 200
+    else:
+        return jsonify({"message": "Invalid credentials"}), 401
+
 
 @app.route("/api/chat", methods=["POST"])
 def chat_api():
