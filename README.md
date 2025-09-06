@@ -22,22 +22,23 @@ It provides users with a secure login flow and an interactive chatbot interface 
 
 /frontend
 
-## 📦 Installation
 
-```
 
 ## 📦 Installation
-1. Clone the repo  
+
+1. Clone the repo
    ```bash
    git clone https://github.com/Ahmad10Raza/Aariv-medical-chatbot.git
    cd Aariv-medical-chatbot
-```
+   ```
 
 2. Install backned dependencies ` requirements.txt`
-   ```
+
+```
    pip install -r requirements.txt
    python app.py
-   ```
+```
+
 3. Install dependencies frontend
    ```bash
    npm install
